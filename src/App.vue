@@ -17,7 +17,8 @@
   --red: #ea5b0f;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -38,24 +39,59 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+// CLASSES
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
+.btn {
+  min-width: 100px;
+  border: unset;
+  border-radius: 8px;
+  a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+  }
 
+  &.btn-primary {
+    background-color: var(--darker_blue);
+  }
+}
+.h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
 
-// #nav {
-//   padding: 30px;
+.text-left {
+  text-align: left;
+}
 
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
+.text-right {
+  text-align: right;
+}
 
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
+.d-none {
+  display: none;
+}
+
+.border-top {
+  margin-top: 30px !important;
+  padding-top: 20px;
+  border-top: 1px solid #cecece;
+}
+
+.border-bottom {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cecece;
+}
 </style>

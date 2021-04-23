@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <GamificationHeader msg="Bouygues Users Ranking"/>
-
-    <div class="container">
-      <ul class="user-list" v-show="datas != null">
+    <Header msg="Bouygues Users Ranking"/>
+    {{ datas === null }}
+    <div class="container" v-if="datas != null">
+      <ul class="user-list">
         <li class="user-item" v-for="user in datas" :key="user.id">
           <router-link :to="'user/' + user.performer.id" class="user-link" title="voir le profil">
             <span>
@@ -12,29 +12,19 @@
             <span>
               {{ user.performer.nickname }}
             </span>
-            <!-- <span class="user_id">
-              <strong>Id :</strong> 
-              {{ user.id }}
-            </span> -->
             <span class="user_role">
               <strong>role :</strong> 
               {{ user.performer.role }}
             </span>
             <span v-if="user.action.score ? user.action.score : user.action.score = '0'">
-              <!-- <strong>Score :</strong> -->
-              <!-- {{ user.action.score }} -->
               <div :class="['user-score_container', {'zero' : user.action.score === '0'}]">
                 <span class="user-score" :data-score="user.action.score"></span>
               </div>
             </span>
-            <!-- <span v-if="user.action.alias"><strong>Alias :</strong> {{ user.action.alias }}</span> -->
-            <!-- <li><a :href="user.contenttype.url">photo</a></li> -->
-            <!-- <p>{{ user }}</p> -->
           </router-link>
           <span class="user_last-answer" v-if="user.action.link">
             <strong>Dernier sujet :</strong>
             <a class="user_last-post" :href="user.action.link" title="voir le dernier post">
-              <!-- {{ user.action.name }} -->
               voir le post
             </a>
           </span>
@@ -46,34 +36,26 @@
 
 <script>
 // @ is an alias to /src
-import GamificationHeader from '@/components/GamificationHeader.vue'
+import Header from '@/components/Header.vue'
 import axios from "axios"
-import json from "@/assets/datas.json"
+// import json from "@/assets/datas.json"
 
 export default {
   name: "Home",
   components: {
-    GamificationHeader
+    Header
   },
   data() {
     return {
-      json: json,
       datas: null,
       UserRanked: null,
       page: 0,
-      userId: null,
-      loading: false
+      userId: null
     };
   },
-  // computed: {
-  //   userId: () => {
-  //     const x = this.$store.getters.getUserId
-  //     return x
-  //   }
-  // },
   created() {
-    // this.requestData(this.page)
-    this.datas = this.json
+    this.requestData(this.page)
+    // this.datas = this.json
     // récupération du userId dans le storage
     this.userId = this.$store.getters.getUserId
   },
@@ -82,20 +64,19 @@ export default {
   },
   methods: {
     requestData (page) {
-      this.loading = true
       axios
         .get("https://api.rocketfid.com/activity/cache/all/" + page + "/25/", {
           headers: {
-            // Authorization: 'Bearer ' + varToken
             "X-Instance": "rainbow",
             "X-Lang": "fr",
             "X-Widget-Version": "3.0.1",
             "Content-Type": "application/json;charset=UTF-8",
-            Accept: "*/*",
+            "Accept": "*/*",
           },
         })
-        .then((response) => (this.datas = response.data))
-        .then(() => (this.loading = false))
+        .then((response) => {
+          this.datas = response.data
+        })
         .catch((error) => console.log('erreur:', error))
     },
     getNextDatas() {
@@ -124,22 +105,12 @@ export default {
 </script>
 
 <style lang="scss">
-.loading-datas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  z-index: 9;
-  background-color: #fff;
-}
 .user-list {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   gap: 30px;
+  margin-bottom: 200px;
 }
 .user-item {
   min-width: 300px;

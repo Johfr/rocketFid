@@ -10,6 +10,9 @@ yarn install
 yarn serve
 ```
 
+### TOKEN
+Après génération du token, modifier la variable VUE_APP_TOKEN dans le fichier .env à la racine du projet
+
 ### Compiles and minifies for production
 ```
 yarn build
