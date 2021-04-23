@@ -58,7 +58,13 @@ export default {
     };
   },
   created() {
-    this.requestData(this.page)
+    const datasInStore = this.$store.getters.getDatas
+
+    if (datasInStore != null) {
+      this.datas = this.$store.getters.getDatas
+    } else {
+      this.requestData(this.page)
+    }
     // this.datas = this.json
     // récupération du userId dans le storage
     this.userId = this.$store.getters.getUserId
@@ -80,6 +86,7 @@ export default {
         })
         .then((response) => {
           this.datas = response.data
+          this.$store.dispatch('mutateDatas', this.datas)
         })
         .catch((error) => {
           console.log('erreur:', error)
@@ -101,7 +108,10 @@ export default {
                 "Accept": "*/*",
               },
             })
-            .then((response) => (this.datas.push(...response.data)))
+            .then((response) => {
+              this.datas.push(...response.data)
+              this.$store.dispatch('mutateDatas', this.datas)
+            })
             .catch((error) => console.log('erreur:', error))
             
         }
@@ -200,4 +210,5 @@ export default {
   opacity: .4;
   color: #174c67;
 }
+
 </style>
