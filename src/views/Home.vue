@@ -210,4 +210,5 @@ export default {
   opacity: .4;
   color: #174c67;
 }
+
 </style>
