@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'GamificationHeader',
+  name: 'Header',
   props: {
     msg: String
   }
