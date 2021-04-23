@@ -167,7 +167,7 @@ export default {
             "X-Lang": "fr",
             "X-Widget-Version": "3.0.1",
             "Content-Type": "application/json",
-            Accept: "*/*",
+            "Accept": "*/*",
           },
         })
         .then((response) => {
@@ -244,9 +244,12 @@ export default {
 // MAIN
 .user_main {
   min-width: calc(100% - 300px);
-  padding-left: 100px;
   padding-right: 30px;
   box-sizing: border-box;
+
+  @media screen and(min-width: 920px) {
+    padding-left: 100px;
+  }
 }
 .user_main-title {
   display: flex;
