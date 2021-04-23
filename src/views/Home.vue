@@ -1,8 +1,11 @@
 <template>
   <div class="home">
     <Header msg="Bouygues Users Ranking"/>
-    {{ datas === null }}
-    <div class="container" v-if="datas != null">
+    
+    <div v-if="errored">
+      <p>erreur serveur, merci de recharger la page</p>
+    </div>
+    <div class="container" v-else>
       <ul class="user-list">
         <li class="user-item" v-for="user in datas" :key="user.id">
           <router-link :to="'user/' + user.performer.id" class="user-link" title="voir le profil">
@@ -47,6 +50,7 @@ export default {
   },
   data() {
     return {
+      errored: false,
       datas: null,
       UserRanked: null,
       page: 0,
@@ -77,7 +81,10 @@ export default {
         .then((response) => {
           this.datas = response.data
         })
-        .catch((error) => console.log('erreur:', error))
+        .catch((error) => {
+          console.log('erreur:', error)
+          this.errored = true
+        })
     },
     getNextDatas() {
       window.onscroll = () => {
