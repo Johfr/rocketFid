@@ -1,0 +1,463 @@
+/* RESET CSS + CLASSES */
+:root {
+  --blue: #009dcc;
+  --dark_blue: #0055a4;
+  --darker_blue: #1a455f;
+  --light_blue: #14809b;
+  --red: #ea5b0f;
+}
+#app {
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.btn {
+  min-width: 100px;
+  border: unset;
+  border-radius: 8px;
+}
+.btn a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+}
+.btn.btn-primary {
+    background-color: var(--darker_blue);
+}
+.h3 {
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  font-weight: bold;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.d-none {
+  display: none;
+}
+.border-top {
+  margin-top: 30px !important;
+  padding-top: 20px;
+  border-top: 1px solid #cecece;
+}
+.border-bottom {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cecece;
+}
+
+
+/* CSS HOME PAGE*/
+
+.user-list {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	gap: 30px;
+	margin-bottom: 200px;
+}
+.user-item {
+	min-width: 300px;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0px 0px 3px #ccc;
+	transition: .6s;
+	position: relative;
+	top: 0;
+}
+.user-item:hover {
+		top: -10px;
+		box-shadow: 1px 0px 15px #ccc;
+		opacity: .9;
+}
+.user-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* background-image: url(/img/pattern-logo.7fc57326.png);
+	background-repeat: no-repeat;
+	background-size: 10%; */
+}
+.user-avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.user-score_container {
+	width: 200px;
+	height: 10px;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: #e7e7e7;
+}
+.user-score_container.zero {
+		display: none;
+}
+.user-score_container .user-score {
+		display: block;
+		height: 100%;
+		background-color: var(--blue);
+		transition: 1s;
+}
+.user-score_container .user-score[data-score="0"] {
+			width: 0%;
+}
+.user-score_container .user-score[data-score="1"] {
+			width: 1%;
+}
+.user-score_container .user-score[data-score="2"] {
+			width: 2%;
+}
+.user-score_container .user-score[data-score="3"] {
+			width: 3%;
+}
+.user-score_container .user-score[data-score="4"] {
+			width: 4%;
+}
+.user-score_container .user-score[data-score="5"] {
+			width: 5%;
+}
+.user-score_container .user-score[data-score="6"] {
+			width: 6%;
+}
+.user-score_container .user-score[data-score="7"] {
+			width: 7%;
+}
+.user-score_container .user-score[data-score="8"] {
+			width: 8%;
+}
+.user-score_container .user-score[data-score="9"] {
+			width: 9%;
+}
+.user-score_container .user-score[data-score="10"] {
+			width: 10%;
+}
+.user-score_container .user-score[data-score="11"] {
+			width: 11%;
+}
+.user-score_container .user-score[data-score="12"] {
+			width: 12%;
+}
+.user-score_container .user-score[data-score="13"] {
+			width: 13%;
+}
+.user-score_container .user-score[data-score="14"] {
+			width: 14%;
+}
+.user-score_container .user-score[data-score="15"] {
+			width: 15%;
+}
+.user-score_container .user-score[data-score="16"] {
+			width: 16%;
+}
+.user-score_container .user-score[data-score="17"] {
+			width: 17%;
+}
+.user-score_container .user-score[data-score="18"] {
+			width: 18%;
+}
+.user-score_container .user-score[data-score="19"] {
+			width: 19%;
+}
+.user-score_container .user-score[data-score="20"] {
+			width: 20%;
+}
+.user-score_container .user-score[data-score="21"] {
+			width: 21%;
+}
+.user-score_container .user-score[data-score="22"] {
+			width: 22%;
+}
+.user-score_container .user-score[data-score="23"] {
+			width: 23%;
+}
+.user-score_container .user-score[data-score="24"] {
+			width: 24%;
+}
+.user-score_container .user-score[data-score="25"] {
+			width: 25%;
+}
+.user-score_container .user-score[data-score="26"] {
+			width: 26%;
+}
+.user-score_container .user-score[data-score="27"] {
+			width: 27%;
+}
+.user-score_container .user-score[data-score="28"] {
+			width: 28%;
+}
+.user-score_container .user-score[data-score="29"] {
+			width: 29%;
+}
+.user-score_container .user-score[data-score="30"] {
+			width: 30%;
+}
+.user-score_container .user-score[data-score="31"] {
+			width: 31%;
+}
+.user-score_container .user-score[data-score="32"] {
+			width: 32%;
+}
+.user-score_container .user-score[data-score="33"] {
+			width: 33%;
+}
+.user-score_container .user-score[data-score="34"] {
+			width: 34%;
+}
+.user-score_container .user-score[data-score="35"] {
+			width: 35%;
+}
+.user-score_container .user-score[data-score="36"] {
+			width: 36%;
+}
+.user-score_container .user-score[data-score="37"] {
+			width: 37%;
+}
+.user-score_container .user-score[data-score="38"] {
+			width: 38%;
+}
+.user-score_container .user-score[data-score="39"] {
+			width: 39%;
+}
+.user-score_container .user-score[data-score="40"] {
+			width: 40%;
+}
+.user-score_container .user-score[data-score="41"] {
+			width: 41%;
+}
+.user-score_container .user-score[data-score="42"] {
+			width: 42%;
+}
+.user-score_container .user-score[data-score="43"] {
+			width: 43%;
+}
+.user-score_container .user-score[data-score="44"] {
+			width: 44%;
+}
+.user-score_container .user-score[data-score="45"] {
+			width: 45%;
+}
+.user-score_container .user-score[data-score="46"] {
+			width: 46%;
+}
+.user-score_container .user-score[data-score="47"] {
+			width: 47%;
+}
+.user-score_container .user-score[data-score="48"] {
+			width: 48%;
+}
+.user-score_container .user-score[data-score="49"] {
+			width: 49%;
+}
+.user-score_container .user-score[data-score="50"] {
+			width: 50%;
+}
+.user-score_container .user-score[data-score="51"] {
+			width: 51%;
+}
+.user-score_container .user-score[data-score="52"] {
+			width: 52%;
+}
+.user-score_container .user-score[data-score="53"] {
+			width: 53%;
+}
+.user-score_container .user-score[data-score="54"] {
+			width: 54%;
+}
+.user-score_container .user-score[data-score="55"] {
+			width: 55%;
+}
+.user-score_container .user-score[data-score="56"] {
+			width: 56%;
+}
+.user-score_container .user-score[data-score="57"] {
+			width: 57%;
+}
+.user-score_container .user-score[data-score="58"] {
+			width: 58%;
+}
+.user-score_container .user-score[data-score="59"] {
+			width: 59%;
+}
+.user-score_container .user-score[data-score="60"] {
+			width: 60%;
+}
+.user-score_container .user-score[data-score="61"] {
+			width: 61%;
+}
+.user-score_container .user-score[data-score="62"] {
+			width: 62%;
+}
+.user-score_container .user-score[data-score="63"] {
+			width: 63%;
+}
+.user-score_container .user-score[data-score="64"] {
+			width: 64%;
+}
+.user-score_container .user-score[data-score="65"] {
+			width: 65%;
+}
+.user-score_container .user-score[data-score="66"] {
+			width: 66%;
+}
+.user-score_container .user-score[data-score="67"] {
+			width: 67%;
+}
+.user-score_container .user-score[data-score="68"] {
+			width: 68%;
+}
+.user-score_container .user-score[data-score="69"] {
+			width: 69%;
+}
+.user-score_container .user-score[data-score="70"] {
+			width: 70%;
+}
+.user-score_container .user-score[data-score="71"] {
+			width: 71%;
+}
+.user-score_container .user-score[data-score="72"] {
+			width: 72%;
+}
+.user-score_container .user-score[data-score="73"] {
+			width: 73%;
+}
+.user-score_container .user-score[data-score="74"] {
+			width: 74%;
+}
+.user-score_container .user-score[data-score="75"] {
+			width: 75%;
+}
+.user-score_container .user-score[data-score="76"] {
+			width: 76%;
+}
+.user-score_container .user-score[data-score="77"] {
+			width: 77%;
+}
+.user-score_container .user-score[data-score="78"] {
+			width: 78%;
+}
+.user-score_container .user-score[data-score="79"] {
+			width: 79%;
+}
+.user-score_container .user-score[data-score="80"] {
+			width: 80%;
+}
+.user-score_container .user-score[data-score="81"] {
+			width: 81%;
+}
+.user-score_container .user-score[data-score="82"] {
+			width: 82%;
+}
+.user-score_container .user-score[data-score="83"] {
+			width: 83%;
+}
+.user-score_container .user-score[data-score="84"] {
+			width: 84%;
+}
+.user-score_container .user-score[data-score="85"] {
+			width: 85%;
+}
+.user-score_container .user-score[data-score="86"] {
+			width: 86%;
+}
+.user-score_container .user-score[data-score="87"] {
+			width: 87%;
+}
+.user-score_container .user-score[data-score="88"] {
+			width: 88%;
+}
+.user-score_container .user-score[data-score="89"] {
+			width: 89%;
+}
+.user-score_container .user-score[data-score="90"] {
+			width: 90%;
+}
+.user-score_container .user-score[data-score="91"] {
+			width: 91%;
+}
+.user-score_container .user-score[data-score="92"] {
+			width: 92%;
+}
+.user-score_container .user-score[data-score="93"] {
+			width: 93%;
+}
+.user-score_container .user-score[data-score="94"] {
+			width: 94%;
+}
+.user-score_container .user-score[data-score="95"] {
+			width: 95%;
+}
+.user-score_container .user-score[data-score="96"] {
+			width: 96%;
+}
+.user-score_container .user-score[data-score="97"] {
+			width: 97%;
+}
+.user-score_container .user-score[data-score="98"] {
+			width: 98%;
+}
+.user-score_container .user-score[data-score="99"] {
+			width: 99%;
+}
+.user-score_container .user-score[data-score="100"] {
+			width: 100%;
+}
+.user_last-answer {
+	display: block;
+	margin-top: 15px;
+}
+.user_last-answer .user_last-post {
+		color: #05f;
+}
+.user_role {
+	font-size: 14px;
+	opacity: .4;
+	color: #174c67;
+}
+.user_id {
+	position: absolute;
+	transform: rotate(90deg);
+	right: -74px;
+	top: 98px;
+	font-size: 14px;
+	opacity: .4;
+	color: #174c67;
+}
