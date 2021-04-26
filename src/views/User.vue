@@ -253,6 +253,7 @@ export default {
 }
 .user_main-title {
   display: flex;
+  flex-flow: row wrap;
 
   .onglet {
     margin-bottom: 0;
